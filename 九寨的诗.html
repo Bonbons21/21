@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>九寨的诗</title>
+		<style>
+			body{
+				margin: 0px auto;
+				padding: 0px;
+			}
+			.model
+			{
+				width: 400px;
+				background: ghostwhite;
+				border: 1px solid wheat;
+				margin: 10px;
+				min-height: 200px;
+				float: left;
+			}
+			.btn-new{
+				clear: both;
+				margin: 10px;
+				width: 450px;
+			}
+			.btn{
+				background: #F5DEB3;
+				width: 80px;
+				margin: 5px auto;
+			}
+			div p{
+				text-align: center;
+			}
+			ul{
+				list-style-type: none;
+			}
+		</style>
+		
+			<meta charset="utf-8">
+			<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+			<title>九寨沟风景区</title>
+			<meta name="keywords" content="九寨沟风景区">
+			<meta name="description" content="九寨沟风景区">
+			<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+			<link rel="shortcut icon" href="images/favicon.ico">
+			
+			<!-- include main css -->
+			<link rel="stylesheet" type="text/css" href="css/slick.css"/>	
+			<link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
+			<link rel="stylesheet" type="text/css" href="css/jquery.mmenu.all.css"/>
+			<link rel="stylesheet" type="text/css" href="css/style.css"/>
+			<link href="font-awesome-4.5.0/css/font-awesome.min.css" rel='stylesheet' type='text/css' media="all" />
+			<link rel="stylesheet" type="text/css" href="css/animate.css"/>
+			
+			<!--[if lt IE 9]>
+		    <script src="http://apps.bdimg.com/libs/html5shiv/r29/html5.min.js"></script>
+		    <script src="http://apps.bdimg.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		    <![endif]-->
+		
+		
+	</head>
+	<body>
+		
+		<header class="header_zi">
+		   <div class="container">
+			   <div class="logo">
+		   	   		<a href="index.html"><img src="./images/logo.PNG" alt="" /></a>
+			   </div>
+			   <a href="#mmenu" class="phone-nav"><i class="fa fa-list"></i></a>
+			  <div class="logo_right">
+			  	 <nav class="nav">
+			   		<ul>
+			   		 			<li><a href="index.html" class="active">首页</a></li>
+			   		 			<li><a href="scenic_overview.html">景区概况</a></li>
+			   		 			<li><a href="court_travel.html">走进九寨</a>
+			   		 				<ul>
+			   		 					<li><a href="court_travel.html">春和景明</a></li>  
+			   		 					<li><a href="court_travel.html">夏绿九寨</a></li>
+			   		 					<li><a href="court_travel.html">彩林漫漫</a></li>
+			   		 					<li><a href="court_travel.html">灵韵冬色</a></li>
+			   		 				</ul>
+			   		 			</li>
+			   		 			<li><a href="comfortable.html">本地特色</a></li>
+			   		 			<li><a href="news.html">关于九寨</a>
+			   		 				<ul>
+			   		 					<li><a href="news.html">自然与动物</a></li>
+			   		 					<li><a href="九寨的诗句.html">九寨的诗</a></li>
+			   		 				</ul>
+			   		 			</li>
+			   		 			<li><a href="feedback.html">留言中心</a></li>
+			   		 			<li><a href="contact.html">联系我们</a></li>
+			   		 		</ul>
+			   			 </nav>
+			   			 <div class="search">
+			   			 	<span class="sea_x">
+			   			 		<input type="" name="" id="" placeholder="请输入关键词">
+			   			 		<i class="fa fa-search"></i>		  	
+			   			 	</span>
+			   			 	<span class="y_z">
+			   			 		
+			   			 					 <span>
+			   			 					            <a href="登录.html">登录</a><a href="register.html">注册</a> <a href="日历.html">日历</a>
+			   			 					        </span>
+			   			 							
+			   			 	</span>
+			   			 </div>
+			   		</div>
+		   	
+		   </div>
+		</header>
+		<!--banner  start-->
+		<section class="banner_zi">
+		    <div><img src="./images/061.png" alt=""></div>	   
+		</section>
+		<div id="content">
+			<div class="model">
+			    <p id="title">九寨沟</p>
+			    <ul id="targetUl"> <!-- 添加了 ID -->
+			        <li>1、神奇九寨画中天，掠魄牵魂人欲仙。</li>
+			        <li>2、翠海流馨萌幻境，彩林展媚郁迷涎。</li>
+			        <li>3、凌空飞瀑传佳乐，绝壁腾松绘妙篇。</li>
+			    </ul>
+			</div>
+			<div class="btn-new">
+				<button id="query" class="btn">获取标题</button>
+				<button id="insert" class="btn">插入节点</button>
+				<button id="replace" class="btn">替换节点</button>
+				<button id="remove" class="btn">删除节点</button>
+				<button id="copy" class="btn">复制节点</button>
+			</div>
+		</div>
+		
+	</body>
+	<script>
+	//获取标题
+	var node=document.getElementById("query");
+	node.onclick=function()
+	{
+		var content=document.getElementById("title").innerHTML
+		alert(content);
+	};
+	//插入节点
+	var insertButton = document.getElementById("insert");
+	insertButton.onclick = function () {
+	    var newNode = document.createElement("li");
+	    newNode.textContent = "4、刚叹秋光如梦醉，又惊瑞雪漫山旋。";
+	    var targetUl = document.getElementById("targetUl"); // 使用 ID 选择器
+	    targetUl.appendChild(newNode);
+	};
+
+				
+				//替换节点
+				var node2=document.getElementById("replace");
+				node2.onclick=function(){
+				var newNode2=document.createElement("li");
+				newNode2.textContent="4、刚叹秋光如梦醉，又惊瑞雪漫山旋。";
+				var o_ul=document.getElementsByTagName("ul")
+				o_ul[0].replaceChild(newNode2,o_ul[0].lastChild)
+				};
+				
+				//删除节点
+				var node3=document.getElementById("remove");
+				node3.onclick=function(){
+					var o_ul=document.getElementsByTagName("ul")
+					if(o_ul[0].hasChildNodes)
+					{
+						o_ul[0].removeChild(o_ul[0].lastChild)
+					}
+				};
+				
+				//复制节点
+				var node4=document.getElementById("copy");
+				node4.onclick=function()
+				{
+					var o_model=document.getElementsByClassName("model")
+					var new_o_model=o_model[0].cloneNode(true)
+					var o_content=document.getElementById("content")
+					o_content.insertBefore(new_o_model,o_model[0])
+				};
+				</script>
+</html>

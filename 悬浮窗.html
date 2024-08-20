@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <style type="text/css">
+        #demo {
+            position:absolute;
+        }
+    </style>
+ 
+    <script type="text/javascript">
+        window.onload = function(){
+            var demo = document.getElementById('demo');
+            var sx = sy = 10;
+            var x = y = 0;
+ 
+            function move(){
+                if(document.documentElement.clientWidth - demo.offsetWidth-10 < x || x < 0){
+                    sx = -sx;
+                }
+ 
+                if(document.documentElement.clientHeight - demo.offsetHeight-10 < y || y < 0){
+                    sy = -sy;
+                }
+ 
+                x = demo.offsetLeft + sx;
+                y = demo.offsetTop + sy;
+ 
+                demo.style.left = x + 'px';
+                demo.style.top = y + 'px';
+            }
+ 
+            var timer = setInterval(move, 100);
+ 
+           
+ 
+            demo.onmouseout = function(){
+                timer = setInterval(move, 100);
+            }
+        }
+    </script>
+    <a href="index.html"><img src="./images/1120%20(10).jpg" id="demo" /></a>
+</body>
+</html>

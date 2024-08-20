@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>调用天气预报</title>
+		<style>
+			body{
+				background: url(./images/03.jpg);
+			}
+			.title{
+				margin: 50px auto;
+				text-align: center;
+			}
+			.box{
+				margin: 50px auto;
+				border: 1px solid #426e91;
+				width: 360px;
+				background: #f9f9f9;
+				display: none;
+			}
+			.box h3{
+				text-align: center;
+			}
+			.box img{
+				display: block;
+				width: 90%;
+				border: 1px solid wheat;
+				margin: 0px auto;
+			}
+			.box:hover{
+				border: 1px solid white;
+			}
+			</style>
+	</head>
+	<body background="">
+		<div class="title">
+			<input id="city" placeholder="请输入城市名称(不要带市和区)" style="width: 300px;"/>
+			<button type="submit" onclick="search()">获取天气信息</button><br />
+		</div>
+		
+		<div class="box" id="box" style="display: none;">
+			<h3>实时天气信息</h3>
+			<img src="" id="img"/>
+			<ul>
+				<li><a id="tem"></a></li>
+				<li><a id="weather"></a></li>
+				<li><a id="wea"></a><br /></li>
+				<li><a id="localcity"></a></li>
+				<li><a id="date"></a></li>
+			</ul>
+			<div id="alarm" style="color: red;"></div>
+		</div>
+		<script src="index.js"></script>
+		<script src="jquery.min1.js"></script>
+		<script>
+			function displayWeather(data) {
+			    document.getElementById("tem").innerHTML = "当前气温：" + data.tem + "℃";
+			    document.getElementById("weather").innerHTML = "今日气温：" + data.tem2 + "~" + data.tem1 + "℃";
+			    document.getElementById("wea").innerHTML = "当前天气：" + data.wea;
+			    document.getElementById("localcity").innerHTML = "当前城市：" + data.city;
+			    document.getElementById("date").innerHTML = "当前日期：" + data.week + data.date;
+			    
+			    // 更改了src的路径，现在指向"images/"目录
+			    document.getElementById("img").src = "images/" + data.wea_img + ".jpg";
+			    
+			    document.getElementById("box").style.display = "block";
+			
+			    console.log("空气质量指数（AQI）：" + data.aqi.air);
+			    console.log("湿度：" + data.humidity);
+			
+			    var alarmDiv = document.getElementById("alarm");
+			    if (data.alarm.alarm_type !== "") {
+			        alarmDiv.innerHTML = "天气警报：" + data.alarm.alarm_content;
+			    } else {
+			        alarmDiv.innerHTML = "";  // 清空警报信息
+			    }
+			}
+			
+			var sampleData = {
+			    "cityid": "101010100",
+			    "date": "2023-10-19",
+			    "week": "星期日",
+			    "update_time": "2023-10-19 11:33:33",
+			    "city": "九寨沟",
+			    "cityEn": "beijing",
+			    "country": "中国",
+			    "countryEn": "China",
+			    "wea": "多云",
+			    "wea_img":"yun",
+			    "tem": "19",
+			    "tem1": "23",
+			    "tem2": "10",
+			    "win": "西北风",
+			    "win_speed": "3级",
+			    "win_meter": "小于12km/h",
+			    "humidity": "39%",
+			    "visibility": "16.72km",
+			    "pressure": "1007",
+			    "air": "74",
+			    "air_pm25": "54",
+			    "air_level": "良",
+			    "air_tips": "空气好，可以外出运动，除极少数对污染物特别敏感的人群以外，对公众没有危害！",
+			    "alarm": {
+			        "alarm_type": "",
+			        "alarm_level": "",
+			        "alarm_content": ""
+			    },
+			    "aqi": {
+			        "air": "74",
+			        "air_level": "良",
+			        "air_tips": "空气好，可以外出运动，除极少数对污染物特别敏感的人群以外，对公众没有危害！",
+			        "pm25": "54",
+			        "pm25_desc": "优",
+			        "pm10": "61",
+			        "pm10_desc": "良",
+			        "o3": "92",
+			        "o3_desc": "优",
+			        "no2": "26",
+			        "no2_desc": "优",
+			        "so2": "2",
+			        "so2_desc": "优",
+			        "kouzhao": "无需戴口罩",
+			        "kaichuang": "适宜开窗",
+			        "jinghuaqi": "关闭净化器",
+			        "cityid": "101010100",
+			        "city": "北京",
+			        "cityEn": "beijing",
+			        "country": "中国",
+			        "countryEn": "China"
+			    }
+			};
+			
+			displayWeather(sampleData);
+		</script>
+	</body>
+</html>

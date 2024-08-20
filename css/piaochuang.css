@@ -1,0 +1,11 @@
+#roll {
+	height: 200px;
+	width: 200px;
+	position: fixed; /*fixed实现绝对定位*/
+	cursor:pointer;
+}
+#roll img{
+	height: 200px;
+	width: 200px;
+	
+}

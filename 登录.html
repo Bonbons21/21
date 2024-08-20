@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+         
+        html {
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+            background: url(./images/06.jpg) no-repeat 0px 0px;
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            -moz-background-size: 100% 100%;
+        }
+         
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+        }
+         
+        #loginDiv {
+            width: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 400px;
+            background-color: rgba(255, 255, 255, 0.3);
+            box-shadow: 7px 7px 17px rgba(15, 16, 19, 0.5);
+            border-radius: 250px;
+        }
+         
+        
+        p {
+            margin-top: 30px;
+            margin-left: 20px;
+            color: azure;
+        }
+         
+        input {
+            margin-left: 15px;
+            border-radius: 5px;
+            border-style: hidden;
+            height: 30px;
+            width: 140px;
+            background-color: rgba(123, 123, 183, 0.5);
+            outline: none;
+            color: #ffffff;
+            padding-left: 10px;
+        }
+         
+        .button {
+            border-color: cornsilk;
+            background-color: rgba(100, 149, 237, .7);
+            color: aliceblue;
+            border-style: hidden;
+            border-radius: 5px;
+            width: 100px;
+            height: 31px;
+            font-size: 16px;
+        }
+		
+		@keyframes scrollUp {
+		    0% {
+		        transform: translateY(100%);
+		    }
+		    100% {
+		        transform: translateY(-100%);
+		    }
+		}
+		.scroll-text {
+		    position: fixed;
+		    bottom: 0;
+		    right: 0;
+		    width: 350px;
+		    height: 50px;
+		   
+		    color: black;
+		    padding: 5px;
+		    overflow: hidden;
+		    white-space: nowrap;
+		}
+		
+		.scroll-text p {
+		    animation: scrollUp 10s linear infinite;
+		    padding-left: 200%;
+		}
+    </style>
+    <style type="text/css">
+        input::-ms-input-placeholder{text-align: center;}
+        input::-webkit-input-placeholder{text-align: center;}
+    </style>
+</head>
+ 
+<body>
+    <div id="loginDiv">
+        <form action="" id="form">
+            <h1 style="text-align: center;color: aliceblue;">立即登录</h1>
+            <p>邮箱:<input id="email" type="text"></p>
+            
+            <p>密码:<input id="password" type="password" placeholder="密码长度至少为6位"></p>
+           <div style="text-align: center; color: darkgray; display: flex; justify-content: center;">
+               <p style="margin-right: 10px;"><a href="忘记密码.html">忘记密码?</a></p>
+               <p><a href="index.html">返回首页</a></p>
+           </div>
+            <div style="text-align: center;margin-top: 30px;">
+                <input type="button" class="button" value="登录" onclick="login_click()" >
+                <input type="button" class="button" value="注册" onclick="register_click()">
+            </div>
+        </form>
+ 
+        <script>
+ 
+            //获取注册时存储在localStorage中的值
+            var sex=localStorage.getItem("sex");
+            var password=localStorage.getItem("password");
+            var email=localStorage.getItem("email");
+            var username=localStorage.getItem("username");
+ 
+            //注册按钮跳转
+            function register_click(){
+                window.location.href="register.html";
+            }
+ 
+            //判断登录是否成功
+            function login_click(){
+                //获取用户输入的信息
+                var email1=document.getElementById("email").value;
+                var password1=document.getElementById("password").value;
+                
+                //判断输入的信息和注册的信息是否一致
+                if(email1!='' && password1!=''){
+                    if (email1==email && password==password1){
+                        window.location.href="My_Album.html";
+                    }
+                    else{
+                        alert("邮箱或密码错误，请重新输入！");
+                    }
+                }
+                else{
+                    alert("邮箱或密码不能为空！");
+                }
+                
+            }
+        </script>
+		<marquee behavior="scroll" direction="up" scrollamount="2" style="position: fixed; bottom: 0; right: 0; width:350px; height: 50px; background-color: rgba(255, 255, 255, 0.5); color: black; padding: 5px;">
+		   <li>一道清泉、一汪碧水、一山彩林涤荡</li>
+			 <li>纷飞雪后，掩映下的秋意映衬一山的洁白</li>
+			 <li>瀑布轰鸣，穿梭于彩林间的自由奔驰</li>
+		<div class="scroll-text">
+		    <p>一道清泉、一汪碧水、一山彩林涤荡</p>
+			 <p>纷飞雪后，掩映下的秋意映衬一山的洁白</p>
+			  <p>瀑布轰鸣，穿梭于彩林间的自由奔驰</p>
+		</div>
+    </div>
+</body>
+</html>
+

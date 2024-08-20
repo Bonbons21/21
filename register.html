@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>注册页面</title>
+    <!--    引入格式文件-->
+    <link rel="stylesheet" href="html&css.css">
+</head>
+<body>
+<style>
+    *{
+        margin: 0px;/*所有的外边距为0*/
+        padding: 0px;/*所有的内边距为0*/
+        box-sizing: border-box;/*规定两个并排的带边框的框*/
+    }
+    body{
+        background: url(./images/03.jpg) center;
+        padding-top: 25px;
+		background: url(./images/R-C.jpeg);
+		background-size: cover;
+    }
+    .rg_layout{
+        width: 900px;
+        height: 500px;
+        border: 8px solid #d26900;/*solid 定义实线*/
+        background-color: white;
+        margin: auto;
+    }
+    .rg_left{
+        float: left;
+        margin: 15px;
+    }
+    .rg_left>p:first-child{
+        color: #c86400;
+        font-size: 20px;
+    }
+    .rg_left>p:last-child{
+        color: #A6A6A6;
+        font-size: 20px;
+    }
+
+    .rg_center{
+        float: left;
+    }
+
+    .rg_right{
+        float: right;
+        margin: 15px;
+        padding-left: 50px;
+    }
+    .rg_right p{
+        font-size: 15px;
+    }
+    .rg_right p a{
+        color: coral;
+    }
+    .td_left{
+        width: 100px;
+        text-align: right;
+        height: 45px;
+    }
+    .td_right{
+        padding-left: 50px;
+    }
+    #username,#password,#email,#name,#tel,#birthday,#checkcode{
+        width: 251px;
+        height: 32px;
+        border: 1px solid #A6A6A6;
+        /*设置边框圆角*/
+        border-radius: 5px;
+        padding-left: 10px;
+    }
+    #checkcode{
+        width: 110px;
+    }
+    #img_check{
+        height: 32px;
+        vertical-align: middle;/*设置图片的位置垂直居中*/
+    }
+    #btn_sub{
+        width: 100px;
+        height: 40px;
+        background-color: #fe7f00;
+        border: 1px solid #FFD026;
+        padding-left: 10px;
+    }
+
+</style>
+<style type="text/css">
+			*
+			{
+				margin: 0;
+				padding: 0;
+			}
+			body
+			{
+			
+				background-size: cover;
+			}
+			ul
+			{
+				width: 200px;
+				height: 200px;
+				position: absolute;
+				bottom: 50px;
+				left: 65%;
+				margin-left: -100px;
+				transform-style: preserve-3d;
+				transform: rotateX(0deg) rotateY(0deg);
+				animation: play 6s linear 0s infinite normal;
+			}
+			ul li
+			{
+				list-style: none;
+				width: 200px;
+				height: 200px;
+				line-height: 200px;
+				font-size: 60px;
+				text-align: center;
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+			ul li img
+			{
+				width: 200px;
+				height: 200px;
+				border: 5px solid skyblue;
+				box-sizing: border-box;
+			}
+			ul:hover
+			{
+				animation-play-state: paused;
+			}
+			ul:hover li img
+			{
+				opacity: 0.7;
+			}
+			ul li:hover img
+			{
+				opacity: 1;
+			}
+			ul li:nth-child(1)
+			{
+				transform: rotateY(60deg) translateZ(200px);
+			}
+			ul li:nth-child(2)
+			{
+				transform: rotateY(120deg) translateZ(200px);
+			}
+			ul li:nth-child(3)
+			{
+				transform: rotateY(180deg) translateZ(200px);
+			}
+			ul li:nth-child(4)
+			{
+				transform: rotateY(240deg) translateZ(200px);
+			}
+			ul li:nth-child(5)
+			{
+				transform: rotateY(300deg) translateZ(200px);
+			}
+			ul li:nth-child(6)
+			{
+				transform: rotateY(360deg) translateZ(200px);
+			}
+			@keyframes play{
+				from
+				{
+					transform: rotateX(-15deg) rotateY(0deg);
+				}
+				to
+				{
+					transform: rotateX(-15deg) rotateY(360deg);
+				}
+			}
+			
+		</style>
+</br></br>
+<div class="rg_layout">
+    <div class="rg_left">
+        <p>新用户注册</p>
+        <p>USER REGISTER</p>
+    </div>
+    <div class="rg_center">
+        <div class="rg_form">
+            <form action="#" method="post">
+				</br></br></br>
+                <table>
+                    <tr><!--label 标签的作用是当点击文字也会跳到文本输出框-->
+                        <!--for属性与ID属性对应规定 label 绑定到哪个表单元素。-->
+                        <td class="td_left"><label for="username">用户名</label> </td>
+                        <td class="td_right"><input type="text" name="username" id="username"> </td>
+                    </tr>
+                    <tr>
+                        <td class="td_left"><label for="password">密码</label> </td>
+                        <td class="td_right"><input type="password" name="password" id="password"> </td>
+                    </tr>
+                    <tr><!--label 标签的作用是当点击文字也会跳到文本输出框-->
+                        <td class="td_left"><label for="email">email</label> </td>
+                        <td class="td_right"><input type="email" name="email" id="email"> </td>
+                    </tr>
+                    <tr>
+                        <td class="td_left"><label for="name">姓名</label> </td>
+                        <td class="td_right"><input type="text" name="name" id="name"> </td>
+                    </tr>
+                    <tr>
+                        <td class="td_left"><label for="tel">手机号</label> </td>
+                        <td class="td_right"><input type="text" name="tel" id="tel"> </td>
+                    </tr>
+
+
+                    <tr>
+                        <td class="td_left"><label for="checkcode">验证码</label> </td>
+                        <td class="td_right">
+                            <input type="text" name="username" id="checkcode">
+                            <input type="button"value="发送验证码">
+<!--                            <img src="images/verify_code.jpg" id="img_check">-->
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" align="center">
+                            <input type="submit" value="注册" id="btn_sub">
+                        </td>
+                    </tr>
+	<tr>
+		    <td></td>
+		    <td><a href="index.html" target="_blank">返回主页></a></td>
+		</tr>
+		
+                </table>
+            </form>
+        </div>
+    </div>
+	</br></br></br>
+    <div class="rg_right">
+        <p>已有账号？<a href="登录.html">立即登录</a></p>
+    </div>
+	
+</div>
+<ul>
+	 	<li><img src="./images/1006%20(9).jpg"</li>
+	 	<li><img src="./images/04.jpg"</li>
+	 	<li><img src="./images/03.jpg"</li>
+	 	<li><img src="./images/358.jpg"</li>
+	 	<li><img src="./images/VCG211310361531.jpg"</li>
+	 	<li><img src="./images/VCG41621545726.jpg"</li>
+	 </ul>
+	 <audio src="./image/MONACA.mp3" autoplay="autoplay" loop="loop"></audio>
+</body>
+</html>
